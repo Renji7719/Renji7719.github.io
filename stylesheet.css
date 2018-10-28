@@ -125,6 +125,9 @@ header {
   padding-bottom: 50px;
   color: #5f5d60;
 }
+.heading h1 {
+  font-weight: normal;
+} 
 
 .heading h2 {
   font-weight: normal;
