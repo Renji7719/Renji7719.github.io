@@ -6,18 +6,40 @@
   <title>ポートフォリオ</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+      $(function(){
+        /* 飛び出すメニュー */
+        $(".menu-icon").click(function(){
+          $(".menu").slideToggle();
+          return false;
+        });
+        /* 飛び出したメニュークリックしたら閉じる(一旦これで…) */
+        $(".menu").click(function(){
+          var win = $(window).width();
+          var p = 670;
+          if(win <= p){
+            $(".menu").hide();
+          }
+        });　
+        $(window).resize(function(){
+          var win = $(window).width();
+          var p = 670;
+          if(win > p){
+            $(".menu").show();
+          }
+        });
+      });
+  </script>
 </head>
 <body>
   <header>
-    <div class="container">
-    </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#profile">プロフィール</a>
-        <a href="#hobby">趣味</a>
-        <a href="#program" class="login">自作プログラム</a>
-      </div>
-    </div>
+    <div class="fa fa-bars menu-icon"></div>
+    <ul class="menu">
+      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#hobby">趣味</a></li>
+      <li><a href="#program" class="login">自作プログラム</a></li>
+    </ul>
   </header>
   <div class="top-wrapper">
     <div class="container">
