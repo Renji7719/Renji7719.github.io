@@ -93,21 +93,28 @@ header {
   float: left;
 }
 
-.header-right {
+.menu {
   float: right;
   margin-right: -25px;
 }
 
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
+.menu li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  line-height: 40px;
+  padding: 0 35px;
   color: white;
   display: block;
   float: left;
   transition: all 0.5s;
 }
 
-.header-right a:hover {
+.menu li a:hover {
   background-color: rgba(255,255,255,0.3);
 }
 
@@ -198,10 +205,6 @@ footer {
 }
 
 .menu-icon {
-  color: white;
-  float: right;
-  font-size: 25px;
-  padding: 21px 0;
   display: none;
 }
 
@@ -235,12 +238,52 @@ footer {
 }
 
 @media all and (max-width: 670px) {
-  .header-right {
-    display: none;
+  .menu-icon{
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+    position: absolute;
+    right: 15px;
+    display: block;
   }
 
-  .menu-icon {
+  .menu-icon:hover{
+      /* どうにもかっこわるかったので一旦削除 */
+  }
+
+  .menu-icon:focus{
+      outline: none;
+  }
+
+  .menu-icon i{
+      color: #888888;
+      font-size: 18px;
+  }
+
+  .menu-icon span{
+      display: inline-block;
+      text-indent:-9999px;
+  }
+
+  .menu {
+    display: none;
+    width: 120%;
+    position: relative;
+    top: 49px;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    width: 100%;
     display: block;
+    padding: 12px 0 10px;
+    background-color: rgba(34,49,52,0.9);
+    color: #fff;
+    text-align: center;
   }
 
   .top-wrapper .btn {
